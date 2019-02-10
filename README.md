@@ -20,7 +20,12 @@ lunch omni_cheryl2-eng
 export ALLOW_MISSING_DEPENDENCIES=true
 # to fix razer kernel not having latest DTC scripts (also important)
 export DTC_EXT=$(pwd)/prebuilts/misc/linux-x86/dtc/dtc
-make -j5 recoveryimage
+
+# to get a kernel image in $OUT/obj/KERNEL_OBJ/arch/arm64/boot/Image.gz-dtb
+mka kernel
+
+# OPTIONAL: to get a boot.img
+mka recoveryimage
 ```
 
 ## Notes
